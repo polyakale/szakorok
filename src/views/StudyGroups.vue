@@ -1,11 +1,20 @@
 <template>
   <h1>Study Groups</h1>
 
-  <table class="table">
-    <tr>
-      <th scope="col">#</th>
-    </tr>
-  </table>
+  <div class="row col-6 table-decor">
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Study Group</th>
+      </tr>
+      <tr v-for="(student, i) in students" :key="i">
+        <td>{{ student.name }}</td>
+        <td>{{ student.class }}</td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
 </template>
 
 <script>
@@ -105,10 +114,17 @@ export default {
           name: "Does not attend a study group",
         },
       ],
+      selectedStudent: null,
+      selectedStudyGroup: null,
     };
   },
 };
 </script>
 
 <style>
+.table-decor {
+  max-width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+}
 </style>
