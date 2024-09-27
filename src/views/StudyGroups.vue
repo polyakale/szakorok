@@ -1,19 +1,31 @@
 <template>
-  <h1>Study Groups</h1>
-
-  <div class="row col-6 table-decor">
+  <div class="row col-6 d-flex p-2 table-decor">
     <table class="table">
-      <tr>
-        <th>Name</th>
-        <th>Class</th>
-        <th>Study Group</th>
-      </tr>
-      <tr v-for="(student, i) in students" :key="i">
-        <td>{{ student.name }}</td>
-        <td>{{ student.class }}</td>
-        <td></td>
-      </tr>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Class</th>
+          <th scope="col">Study Group</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(student, i) in students" :key="i">
+          <td>{{ student.name }}</td>
+          <td>{{ student.class }}</td>
+          <td>
+            <select class="form-select" aria-label="Default select example"
+            v-model="student.studyGroupId">
+              <option v-for="(studyGroup, i) in studyGroups" :key="i" :value="studyGroup.id">
+                {{ studyGroup.name }}
+              </option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
     </table>
+  </div>
+  <div class="row col-6">
+    <div class="container"></div>
   </div>
 </template>
 
@@ -95,7 +107,7 @@ export default {
       studyGroups: [
         {
           id: 1,
-          name: "Robotics",
+          name: "No study group",
         },
         {
           id: 2,
@@ -111,19 +123,22 @@ export default {
         },
         {
           id: 5,
-          name: "Does not attend a study group",
+          name: "Robotics",
         },
       ],
       selectedStudent: null,
       selectedStudyGroup: null,
     };
   },
+  method: {},
 };
 </script>
 
 <style>
+.my-border {
+  border: 2px groove solid;
+}
 .table-decor {
-  max-width: 100%;
   max-height: 400px;
   overflow-y: auto;
 }
