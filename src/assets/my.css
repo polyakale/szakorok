@@ -1,6 +1,41 @@
+.my-bg {
+  background-color: black;
+}
+
+.my-card {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.my-table-header {
+  color: goldenrod;
+}
+
 .my-container {
-    max-width: 1200px;
-  }
-.my-border {
-    border: 2px groove goldenrod;
+  max-width: 1200px;
+}
+
+.th-decor {
+  border: 2px solid rgba(210, 105, 30,0.7);
+  padding: 6px;
+}
+.td-decor {
+  border: 1px ridge rgba(152, 251, 152, 0.4);
+  padding: 6px;
+}
+
+.table-decor {
+  color: gold;
+  max-height: 550px;
+  overflow-y: auto;
+}
+
+.my-table-border {
+  border: 2px groove goldenrod;
+}
+
+.my-title {
+  color: skyblue;
+  text-align: center;
+  border: 3px outset crimson;
 }
