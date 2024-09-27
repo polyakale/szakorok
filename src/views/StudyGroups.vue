@@ -32,7 +32,7 @@
         </tbody>
       </table>
     </div>
-    <div class="col-6">
+    <div class="col-6 my-card">
       <StudyGroupCard
       v-for="studyGroup in studyGroups" :key="studyGroup.id"
       :studyGroup="studyGroup"
